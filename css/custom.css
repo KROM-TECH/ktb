@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .title {
   font-family: 'Sriracha', cursive;
   font-size: 5rem;
   color: #45427B;
+}
+
+.font1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: large;
 }
