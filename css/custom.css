@@ -21,6 +21,14 @@
   margin-top: -64px;
   height: 30rem;
 }
-.ma{
+
+.ma {
   padding-top: 9rem;
+}
+
+.widget-newsletter {
+  background-color: #512da8;
+  padding: 28px 0;
+  color: #ffffff;
+  border-bottom: 0px solid #ffffff;
 }
