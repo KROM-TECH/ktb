@@ -10,3 +10,17 @@
   font-family: 'Open Sans', sans-serif;
   font-size: large;
 }
+
+.cover {
+  background-image: url(/img/cover.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #512da8;
+  margin-top: -64px;
+  height: 30rem;
+}
+.ma{
+  padding-top: 9rem;
+}
