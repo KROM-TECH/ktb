@@ -88,18 +88,16 @@
     </label>
   </div>
 <section class="container center editTitle" style="width: 80%;">
-  <textarea id="textarea" placeholder="Title..." rows="5"></textarea>
+  <textarea id="textarea" placeholder="Title..." rows="5" class="materialize-textarea"></textarea>
       <div class="row">
         <div class="col s12">
           <ul class="tabs editTab pur-text grey darken-2">
             <li class="tab col s3"><a href="#test1">Write</a></li>
             <li class="tab col s3"><a href="#test2">Preview</a></li>
-            <li class="tab col s3"><a href="#test4">Help</a></li>
           </ul>
         </div>
         <div id="test1" class="col s12">Write</div>
         <div id="test2" class="col s12">Preview</div>
-        <div id="test4" class="col s12">Help</div>
       </div>
 
 </section>
@@ -117,7 +115,15 @@
   // function execCommandWithArg(command, arg){
   //   textEditor.document.execCommand(command, false, arg)
   // }
-document.querySelector('textarea').focus()
+// document.querySelector('textarea').focus()
+
+// let el = document.querySelector('textarea');
+// el.addEventListener("input", function() {
+//   if (el.scrollTop != 0){
+//     el.style.height = el.scrollHeight + "px"}
+
+// });
+
 
 </script>
 </html>
