@@ -46,27 +46,27 @@
   <li class=""><a class="btn pur" id="signout2">Sign Out</a></li>
 </ul>
 
-<body class="grey darken-4" style="width:100%; height:100%" onload="enableEditMode();">
+<body class="grey darken-4" style="width:100%; height:100%" >
   <!-- <div>
-    <button onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
-    <button onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
-    <button onclick="execCmd('underline');"><i class="fa fa-underline"></i></button>
-    <button onclick="execCmd('strikethrough');"><i class="fa fa-strikethrough"></i></button>
-    <button onclick="execCmd('justifyLeft');"><i class="fa fa-align-left"></i></button>
-    <button onclick="execCmd('justifyCenter');"><i class="fa fa-align-center"></i></button>
-    <button onclick="execCmd('justifyRight');"><i class="fa fa-align-right"></i></button>
-    <button onclick="execCmd('justifyFull');"><i class="fa fa-align-justify"></i></button>
-    <button onclick="execCmd('cut');"><i class="fa fa-cut"></i></button>
-    <button onclick="execCmd('copy');"><i class="fa fa-copy"></i></button>
-    <button onclick="execCmd('indent');"><i class="fa fa-indent"></i></button>
-    <button onclick="execCmd('outdent');"><i class="fa fa-dedent"></i></button>
-    <button onclick="execCmd('subscript');"><i class="fa fa-subscript"></i></button>
-    <button onclick="execCmd('superscript');"><i class="fa fa-superscript"></i></button>
-    <button onclick="execCmd('undo');"><i class="fa fa-undo"></i></button>
-    <button onclick="execCmd('redo');"><i class="fa fa-repeat"></i></button>
-    <button onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
-    <button onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
-    <button onclick="execCmd('insertParagraph');"><i class="fa fa-paragraph"></i></button>
+    <button onclick="formatDoc('bold');"><i class="fa fa-bold"></i></button>
+    <button onclick="formatDoc('italic');"><i class="fa fa-italic"></i></button>
+    <button onclick="formatDoc('underline');"><i class="fa fa-underline"></i></button>
+    <button onclick="formatDoc('strikethrough');"><i class="fa fa-strikethrough"></i></button>
+    <button onclick="formatDoc('justifyLeft');"><i class="fa fa-align-left"></i></button>
+    <button onclick="formatDoc('justifyCenter');"><i class="fa fa-align-center"></i></button>
+    <button onclick="formatDoc('justifyRight');"><i class="fa fa-align-right"></i></button>
+    <button onclick="formatDoc('justifyFull');"><i class="fa fa-align-justify"></i></button>
+    <button onclick="formatDoc('cut');"><i class="fa fa-cut"></i></button>
+    <button onclick="formatDoc('copy');"><i class="fa fa-copy"></i></button>
+    <button onclick="formatDoc('indent');"><i class="fa fa-indent"></i></button>
+    <button onclick="formatDoc('outdent');"><i class="fa fa-dedent"></i></button>
+    <button onclick="formatDoc('subscript');"><i class="fa fa-subscript"></i></button>
+    <button onclick="formatDoc('superscript');"><i class="fa fa-superscript"></i></button>
+    <button onclick="formatDoc('undo');"><i class="fa fa-undo"></i></button>
+    <button onclick="formatDoc('redo');"><i class="fa fa-repeat"></i></button>
+    <button onclick="formatDoc('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
+    <button onclick="formatDoc('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
+    <button onclick="formatDoc('insertParagraph');"><i class="fa fa-paragraph"></i></button>
 <select  onclick="execCommandWithArg('formatBlock', this.value)">
   <option value="H1">H1</option>
   <option value="H2">H2</option>
@@ -75,10 +75,10 @@
   <option value="H5">H5</option>
   <option value="H6">H6</option>
 </select>
-    <button onclick="execCmd('insertHorizontalRule');">HR</button>
-    <button onclick="execCmd('createLink', Prompt('Enter a URL', 'https://'));"><i class="fa fa-link"></i></button>
-    <button onclick="execCmd('bold');"><i class="fa fa-unlink"></i></button>
-    <button onclick="execCmd('bold');"><i class="fa fa-code"></i></button>
+    <button onclick="formatDoc('insertHorizontalRule');">HR</button>
+    <button onclick="formatDoc('createLink', Prompt('Enter a URL', 'https://'));"><i class="fa fa-link"></i></button>
+    <button onclick="formatDoc('bold');"><i class="fa fa-unlink"></i></button>
+    <button onclick="formatDoc('bold');"><i class="fa fa-code"></i></button>
   </div>
 <iframe name="textEditor" width="70%" height="50%"></iframe> -->
   <div class="switch right" style="padding: 1em;">
@@ -102,25 +102,25 @@
       </div>
       <div id="test1" class="col s12">
         <div class="center ">
-          <span class="btn-small" onclick="execCmd('bold');"><i class="material-icons">format_bold</i></span>
-          <span class="btn-small" onclick="execCmd('italic');"><i class="material-icons">format_italic</i></span>
-          <span class="btn-small" onclick="execCmd('insertUnorderedList');"><i
-              class="material-icons">format_list_bulleted</i></span>
-          <span class="btn-small" onclick="execCmd('insertOrderedList');"><i
-              class="material-icons">format_list_numbered</i></span>
-          <span class="btn-small" onclick="execCmd('strikethrough');"><i
-              class="material-icons">format_strikethrough</i></span>
-          <span class="btn-small" onclick="execCmd('justifyLeft');"><i
-              class="material-icons">format_align_left</i></span>
+          <button class="btn-small" onclick="formatDoc('bold');"><i class="material-icons">format_bold</i></button>
+          <button class="btn-small" onclick="formatDoc('italic');"><i class="material-icons">format_italic</i></button>
+          <button class="btn-small" onclick="formatDoc('insertUnorderedList');"><i
+              class="material-icons">format_list_bulleted</i></button>
+          <button class="btn-small" onclick="formatDoc('insertOrderedList');"><i
+              class="material-icons">format_list_numbered</i></button>
+          <button class="btn-small" onclick="formatDoc('strikethrough');"><i
+              class="material-icons">format_strikethrough</i></button>
+          <button class="btn-small" onclick="formatDoc('justifyLeft');"><i
+              class="material-icons">format_align_left</i></button>
 
-          <span class="btn-small" onclick="execCmd('justifyCenter');"><i
-              class="material-icons">format_align_center</i></span>
-          <span class="btn-small" onclick="execCmd('justifyRight');"><i
-              class="material-icons">format_align_right</i></span>
-          <span class="btn-small" onclick="execCmd('createLink', Prompt('Enter a URL', 'https://'));"><i
-              class="material-icons">link</i></span>
+          <button class="btn-small" onclick="formatDoc('justifyCenter');"><i
+              class="material-icons">format_align_center</i></button>
+          <button class="btn-small" onclick="formatDoc('justifyRight');"><i
+              class="material-icons">format_align_right</i></button>
+          <button class="btn-small" onclick="formatDoc('createLink', Prompt('Enter a URL', 'https://'));"><i
+              class="material-icons">link</i></button>
         </div>
-        <div contenteditable="true" placeholder="Enter text here..."></div>
+        <div contenteditable="true" placeholder="Enter text here..." id="textBox"></div>
       </div>
       <div id="test2" class="col s12">Preview</div>
     </div>
@@ -129,14 +129,16 @@
 </body>
 <script src="https://use.fontawesome.com/7672e5925f.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
 <script>
   M.AutoInit()
   function enableEditMode(){
     document.designMode = 'On';
   }
-  function execCmd(command){
-    document.execCommand(command, false, null)
-  }
+      function formatDoc(sCmd, sValue) {
+         document.execCommand(sCmd, false, sValue); 
+      }
   function execCommandWithArg(command, arg){
     document.execCommand(command, false, arg)
   }
