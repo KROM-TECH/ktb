@@ -3,13 +3,15 @@
 
 <head>
   <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection" />
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>question</title>
+  <title>Write a blog</title>
 </head>
 <nav class="white">
   <div class="nav-wrapper white pur-text">
@@ -87,35 +89,58 @@
       Audio
     </label>
   </div>
-<section class="container center editTitle" style="width: 80%;">
-  <textarea id="textarea" placeholder="Title..." rows="5" class="materialize-textarea"></textarea>
-      <div class="row">
-        <div class="col s12">
-          <ul class="tabs editTab pur-text grey darken-2">
-            <li class="tab col s3"><a href="#test1">Write</a></li>
-            <li class="tab col s3"><a href="#test2">Preview</a></li>
-          </ul>
-        </div>
-        <div id="test1" class="col s12">Write</div>
-        <div id="test2" class="col s12">Preview</div>
+  <section class="container center editTitle" style="width: 80%;">
+    <textarea id="textarea" placeholder="Title..." rows="5" class="materialize-textarea"></textarea>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs editTab pur-text grey darken-2">
+          <li class="tab col s3 valign-wrapper"><a href="#test1"><i class="material-icons-outlined"
+                style="font-size: 2rem; padding-top: 0.8rem;">create</i></a></li>
+          <li class="tab col s3"><a href="#test2"><i class="material-icons-outlined"
+                style="font-size: 2rem; padding-top: 0.8rem;">visibility</i></a></li>
+        </ul>
       </div>
+      <div id="test1" class="col s12">
+        <div class="center ">
+          <span class="btn-small" onclick="execCmd('bold');"><i class="material-icons">format_bold</i></span>
+          <span class="btn-small" onclick="execCmd('italic');"><i class="material-icons">format_italic</i></span>
+          <span class="btn-small" onclick="execCmd('insertUnorderedList');"><i
+              class="material-icons">format_list_bulleted</i></span>
+          <span class="btn-small" onclick="execCmd('insertOrderedList');"><i
+              class="material-icons">format_list_numbered</i></span>
+          <span class="btn-small" onclick="execCmd('strikethrough');"><i
+              class="material-icons">format_strikethrough</i></span>
+          <span class="btn-small" onclick="execCmd('justifyLeft');"><i
+              class="material-icons">format_align_left</i></span>
 
-</section>
+          <span class="btn-small" onclick="execCmd('justifyCenter');"><i
+              class="material-icons">format_align_center</i></span>
+          <span class="btn-small" onclick="execCmd('justifyRight');"><i
+              class="material-icons">format_align_right</i></span>
+          <span class="btn-small" onclick="execCmd('createLink', Prompt('Enter a URL', 'https://'));"><i
+              class="material-icons">link</i></span>
+        </div>
+        <div contenteditable="true" placeholder="Enter text here..."></div>
+      </div>
+      <div id="test2" class="col s12">Preview</div>
+    </div>
+
+  </section>
 </body>
 <script src="https://use.fontawesome.com/7672e5925f.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 <script>
   M.AutoInit()
-  // function enableEditMode(){
-  //   textEditor.document.designMode = 'On';
-  // }
-  // function execCmd(command){
-  //   textEditor.document.execCommand(command, false, null)
-  // }
-  // function execCommandWithArg(command, arg){
-  //   textEditor.document.execCommand(command, false, arg)
-  // }
-// document.querySelector('textarea').focus()
+  function enableEditMode(){
+    document.designMode = 'On';
+  }
+  function execCmd(command){
+    document.execCommand(command, false, null)
+  }
+  function execCommandWithArg(command, arg){
+    document.execCommand(command, false, arg)
+  }
+document.querySelector('textarea').focus()
 
 // let el = document.querySelector('textarea');
 // el.addEventListener("input", function() {
@@ -126,4 +151,5 @@
 
 
 </script>
+
 </html>
