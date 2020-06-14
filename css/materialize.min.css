@@ -4818,7 +4818,7 @@ small {
 }
 
 .tabs .tab a {
-  color: rgba(238, 110, 115, 0.7);
+  color: #1B1464 !important;
   display: block;
   width: 100%;
   height: 100%;
@@ -4827,17 +4827,18 @@ small {
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-transition: color .28s ease, background-color .28s ease;
-  transition: color .28s ease, background-color .28s ease
+  transition: color .28s ease, background-color .28s ease;
+  border: 2px thick #fff
 }
 
 .tabs .tab a:focus, .tabs .tab a:focus.active {
-  background-color: rgba(246, 178, 181, 0.2);
+  background-color: rgba(239, 235, 243, 0.1);
   outline: none
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: #ee6e73
+  color: rgb(55, 41, 204) !important
 }
 
 .tabs .tab.disabled a, .tabs .tab.disabled a:hover {
@@ -4849,7 +4850,7 @@ small {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: #f6b2b5;
+  background-color: #1B1464 !important;
   will-change: left, right
 }
 
@@ -6407,7 +6408,7 @@ textarea.materialize-textarea {
 }
 
 .switch label input[type=checkbox]:checked+.lever {
-  background-color: #84c7c1
+  background-color: rgb(109, 102, 185)
 }
 
 .switch label input[type=checkbox]:checked+.lever:before, .switch label input[type=checkbox]:checked+.lever:after {
@@ -6415,7 +6416,7 @@ textarea.materialize-textarea {
 }
 
 .switch label input[type=checkbox]:checked+.lever:after {
-  background-color: #26a69a
+  background-color: #1B1464
 }
 
 .switch label .lever {
