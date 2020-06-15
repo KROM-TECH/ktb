@@ -85,6 +85,17 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-color: rgb(123, 118, 185);
   color: white;
 }
+
+.btn-large {
+  background-color: transparent;
+  color: rgb(123, 118, 185);
+}
+
+.btn-large:hover {
+  background-color: rgb(123, 118, 185);
+  color: white;
+}
+
 .btn {
   background-color: transparent;
   color: rgb(123, 118, 185);
@@ -133,6 +144,16 @@ div[contenteditable=true] {
   text-shadow: 0 0 5px #45427B, 0 0 10px #45427B, 0 0 20px #45427B;
 }
 
-.m1{
+.m1 {
   margin: 1rem;
+}
+
+.Rbtn {
+  height: 7rem !important;
+  width: 7rem !important;
+}
+
+button:disabled {
+  background-color:rgb(158, 158, 172)
+  color:#fff
 }
