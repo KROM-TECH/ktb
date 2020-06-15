@@ -46,12 +46,12 @@
   <li class=""><a class="btn pur" id="signout2">Sign Out</a></li>
 </ul>
 
-<body class="grey darken-4" style="width:100%; height:100%" >
+<body class="grey darken-4" style="width:100%; height:100%">
 
   <div class="switch right" style="padding: 1em;">
     <label>
       Text
-      <input id="mode" type="checkbox">
+      <input id="mode" type="checkbox" checked>
       <span class="lever"></span>
       Audio
     </label>
@@ -61,14 +61,14 @@
     <div class="row">
       <div class="col s12">
         <ul class="tabs editTab pur-text grey darken-2">
-          <li class="tab col s3 valign-wrapper"><a href="#test1"><i class="material-icons-outlined"
+          <li class="tab col s6 l6"><a href="#test1"><i class="material-icons-outlined"
                 style="font-size: 2rem; padding-top: 0.8rem;">create</i></a></li>
-          <li class="tab col s3"><a href="#test2"><i class="material-icons-outlined"
+          <li class="tab col s6 l6"><a href="#test2"><i class="material-icons-outlined"
                 style="font-size: 2rem; padding-top: 0.8rem;">visibility</i></a></li>
         </ul>
       </div>
       <div id="test1" class="col s12">
-        <div class="center ">
+        <div class="center">
           <button class="btn-small" onclick="formatDoc('bold');"><i class="material-icons">format_bold</i></button>
           <button class="btn-small" onclick="formatDoc('italic');"><i class="material-icons">format_italic</i></button>
           <button class="btn-small" onclick="formatDoc('insertUnorderedList');"><i
@@ -87,7 +87,7 @@
           <button class="btn-small" onclick="formatDoc('createLink', Prompt('Enter a URL', 'https://'));"><i
               class="material-icons">link</i></button>
         </div>
-        <div contenteditable="true" placeholder="Let here your Story..." id="textBox" ></div>
+        <div contenteditable="true" placeholder="Let here your Story..." id="textBox"></div>
       </div>
       <div id="test2" class="col s12">Preview</div>
     </div>
@@ -95,45 +95,65 @@
   </section>
 
 
-    <section id="audio" class="container" style="margin-top: 15%;">
-      <div class="row center-align">
-        <h3>Welcome <br> <span class="red-text accent-2" style="font-size: 2rem;"> Kromate</span></h3>
+  <section id="audio" class="container" style="margin-top: 15%;">
+    <div class="row center-align">
+      <h3><span class="deepshadow">Welcome</span></h3>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs editTab pur-text grey darken-2">
+          <li class="tab col s6 l6"><a href="#voice"><i class="material-icons-outlined"
+                style="font-size: 2rem; padding-top: 0.8rem;">record</i></a></li>
+          <li class="tab col s6 l6"><a href="#upload"><i class="material-icons-outlined"
+                style="font-size: 2rem; padding-top: 0.8rem;">upload</i></a></li>
+        </ul>
       </div>
-    
-      <div class="row center-align" style="margin-top: 8rem;">
-        <button id="record" class="circle btn-floating btn-large red accent-1 responsive-img waves-light waves-effect">
-          <i class="material-icons">mic</i>
-        </button>
-        <p class="purple-text lighten-4">Click the icon to start ranting</p>
-    
-        <section id="sound-clips"></section>
-        <button class="btr waves-effect waves-light btn" id="pause"><i class="material-icons left">pause</i>pause</button>
-        <br>
-        <button class="btr waves-effect waves-light btn" id="stop"><i class="material-icons left">stop</i>stop</button>
-    
-      </div>
-    
-      <!-- Modal Structure -->
-      <div id="uploadmodal" class="modal">
-        <div class="modal-content">
-          <h3 class="center-align">Details</h3>
-          <div class="input-field col s12">
-            <input id="title" type="text" class="validate">
-            <label for="title">Title</label>
+      <div id="voice" class="col s12">
+        <div class="row center-align" style="margin-top: 8rem;">
+          <button id="record"
+            class="circle btn-floating btn-large red accent-1 responsive-img waves-light waves-effect m1">
+            <i class="material-icons" style="font-size: 2.5rem;">mic</i>
+          </button>
+
+          <section id="sound-clips"></section>
+          <button class="btr waves-effect waves-light btn m1" id="pause"><i
+              class="material-icons left">pause</i>pause</button>
+          <br>
+          <button class="btr waves-effect waves-light btn m1" id="stop"><i
+              class="material-icons left">stop</i>stop</button>
+
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="uploadmodal" class="modal">
+          <div class="modal-content">
+            <h3 class="center-align">Details</h3>
+            <div class="input-field col s12">
+              <input id="title" type="text" class="validate">
+              <label for="title">Title</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="desc" type="text" class="validate">
+              <label for="desc">description</label>
+            </div>
           </div>
-          <div class="input-field col s12">
-            <input id="desc" type="text" class="validate">
-            <label for="desc">description</label>
+          <div class="modal-footer">
+            <span id="status"></span>
+            <button id="uploadbtn" class="waves-effect waves-green btn-flat">Upload</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <span id="status"></span>
-          <button id="uploadbtn" class="waves-effect waves-green btn-flat">Upload</button>
+      </div>
+      <div id="upload" class="col s12">
+        <div class="center" style="margin-top: 2rem; font-size: 3rem;">
+          Upload a pre-recorded audio
         </div>
       </div>
-    
-    
-    </section>
+    </div>
+
+
+
+  </section>
 </body>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/audio.js"></script>
@@ -145,12 +165,12 @@
 
 
 
-      function formatDoc(sCmd, sValue) {
-         document.execCommand(sCmd, false, sValue); 
-      }
+  function formatDoc(sCmd, sValue) {
+    document.execCommand(sCmd, false, sValue);
+  }
 
-document.querySelector('textarea').focus()
-document.querySelector('#mode').addEventListener('change', function() {
+  document.querySelector('textarea').focus()
+  document.querySelector('#mode').addEventListener('change', function () {
     const modeCheck = document.querySelector('#mode').checked
     if (modeCheck) {
       document.querySelector('#text').style.display = 'none'
@@ -159,18 +179,18 @@ document.querySelector('#mode').addEventListener('change', function() {
       document.querySelector('#text').style.display = 'block'
       document.querySelector('#audio').style.display = 'none'
     }
-  } )
+  })
 
-    function modeCheck() {
-      const modeCheck = document.querySelector('#mode').checked
-      if (modeCheck) {
-        document.querySelector('#text').style.display = 'none'
-        document.querySelector('#audio').style.display = 'block'
-      } else {
-        document.querySelector('#text').style.display = 'block'
-        document.querySelector('#audio').style.display = 'none'
-      }
+  function modeCheck() {
+    const modeCheck = document.querySelector('#mode').checked
+    if (modeCheck) {
+      document.querySelector('#text').style.display = 'none'
+      document.querySelector('#audio').style.display = 'block'
+    } else {
+      document.querySelector('#text').style.display = 'block'
+      document.querySelector('#audio').style.display = 'none'
     }
+  }
 
 </script>
 

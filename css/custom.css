@@ -85,12 +85,22 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-color: rgb(123, 118, 185);
   color: white;
 }
+.btn {
+  background-color: transparent;
+  color: rgb(123, 118, 185);
+}
+
+.btn:hover {
+  background-color: rgb(123, 118, 185);
+  color: white;
+}
 
 #textBox {
   font-size: 1rem !important;
   color: white;
   margin-top: 2rem;
   background-color: transparent !important;
+  text-align: left !important;
 }
 
 [contenteditable=true]:empty:before {
@@ -116,4 +126,13 @@ div[contenteditable=true] {
   width: 100%;
   height: 30rem;
   background-color: transparent !important;
+}
+
+.deepshadow {
+  color: rgb(36, 32, 110);
+  text-shadow: 0 0 5px #45427B, 0 0 10px #45427B, 0 0 20px #45427B;
+}
+
+.m1{
+  margin: 1rem;
 }
