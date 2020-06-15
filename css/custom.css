@@ -154,6 +154,6 @@ div[contenteditable=true] {
 }
 
 button:disabled {
-  background-color:rgb(158, 158, 172)
+  background-color:rgb(158, 158, 172);
   color:#fff
 }
