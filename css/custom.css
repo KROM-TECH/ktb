@@ -86,16 +86,27 @@ textarea.materialize-textarea:focus:not([readonly]) {
   color: white;
 }
 
-.editContent {
+#textBox {
   font-size: 1rem !important;
   color: white;
+  margin-top: 2rem;
+  background-color: transparent !important;
 }
 
 [contenteditable=true]:empty:before {
   content: attr(placeholder);
   pointer-events: none;
   display: block;
-  /* For Firefox */
+  justify-content: left;
+  align-items: left;
+  color: rgb(172, 168, 168);
+  background-color: transparent !important;
+}
+
+[contenteditable=true]:focus {
+  border: none;
+  outline: none;
+  background-color: transparent !important;
 }
 
 /* */
@@ -103,5 +114,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 div[contenteditable=true] {
   border: 0px dashed #AAA;
   width: 100%;
-  height: 10rem;
+  height: 30rem;
+  background-color: transparent !important;
 }

@@ -33,7 +33,7 @@
       <div class="background">
         <div class="pur" style=" height: 100%;"></div>
       </div>
-      <a href=""><img id="profileImg" class="circle" src="./img/profile.png"></a>
+      <a href=""><img id="profileImg" class="circle" src="#"></a>
       <a href="#name"><span class="white-text name"></span></a>
       <a href="#email"><span class="white-text email" id="usermail"></span></a>
     </div>
@@ -47,49 +47,16 @@
 </ul>
 
 <body class="grey darken-4" style="width:100%; height:100%" >
-  <!-- <div>
-    <button onclick="formatDoc('bold');"><i class="fa fa-bold"></i></button>
-    <button onclick="formatDoc('italic');"><i class="fa fa-italic"></i></button>
-    <button onclick="formatDoc('underline');"><i class="fa fa-underline"></i></button>
-    <button onclick="formatDoc('strikethrough');"><i class="fa fa-strikethrough"></i></button>
-    <button onclick="formatDoc('justifyLeft');"><i class="fa fa-align-left"></i></button>
-    <button onclick="formatDoc('justifyCenter');"><i class="fa fa-align-center"></i></button>
-    <button onclick="formatDoc('justifyRight');"><i class="fa fa-align-right"></i></button>
-    <button onclick="formatDoc('justifyFull');"><i class="fa fa-align-justify"></i></button>
-    <button onclick="formatDoc('cut');"><i class="fa fa-cut"></i></button>
-    <button onclick="formatDoc('copy');"><i class="fa fa-copy"></i></button>
-    <button onclick="formatDoc('indent');"><i class="fa fa-indent"></i></button>
-    <button onclick="formatDoc('outdent');"><i class="fa fa-dedent"></i></button>
-    <button onclick="formatDoc('subscript');"><i class="fa fa-subscript"></i></button>
-    <button onclick="formatDoc('superscript');"><i class="fa fa-superscript"></i></button>
-    <button onclick="formatDoc('undo');"><i class="fa fa-undo"></i></button>
-    <button onclick="formatDoc('redo');"><i class="fa fa-repeat"></i></button>
-    <button onclick="formatDoc('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
-    <button onclick="formatDoc('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
-    <button onclick="formatDoc('insertParagraph');"><i class="fa fa-paragraph"></i></button>
-<select  onclick="execCommandWithArg('formatBlock', this.value)">
-  <option value="H1">H1</option>
-  <option value="H2">H2</option>
-  <option value="H3">H3</option>
-  <option value="H4">H4</option>
-  <option value="H5">H5</option>
-  <option value="H6">H6</option>
-</select>
-    <button onclick="formatDoc('insertHorizontalRule');">HR</button>
-    <button onclick="formatDoc('createLink', Prompt('Enter a URL', 'https://'));"><i class="fa fa-link"></i></button>
-    <button onclick="formatDoc('bold');"><i class="fa fa-unlink"></i></button>
-    <button onclick="formatDoc('bold');"><i class="fa fa-code"></i></button>
-  </div>
-<iframe name="textEditor" width="70%" height="50%"></iframe> -->
+
   <div class="switch right" style="padding: 1em;">
     <label>
       Text
-      <input type="checkbox">
+      <input id="mode" type="checkbox">
       <span class="lever"></span>
       Audio
     </label>
   </div>
-  <section class="container center editTitle" style="width: 80%;">
+  <section id="text" class="container center editTitle" style="width: 80%;">
     <textarea id="textarea" placeholder="Title..." rows="5" class="materialize-textarea"></textarea>
     <div class="row">
       <div class="col s12">
@@ -120,37 +87,90 @@
           <button class="btn-small" onclick="formatDoc('createLink', Prompt('Enter a URL', 'https://'));"><i
               class="material-icons">link</i></button>
         </div>
-        <div contenteditable="true" placeholder="Enter text here..." id="textBox"></div>
+        <div contenteditable="true" placeholder="Let here your Story..." id="textBox" ></div>
       </div>
       <div id="test2" class="col s12">Preview</div>
     </div>
 
   </section>
+
+
+    <section id="audio" class="container" style="margin-top: 15%;">
+      <div class="row center-align">
+        <h3>Welcome <br> <span class="red-text accent-2" style="font-size: 2rem;"> Kromate</span></h3>
+      </div>
+    
+      <div class="row center-align" style="margin-top: 8rem;">
+        <button id="record" class="circle btn-floating btn-large red accent-1 responsive-img waves-light waves-effect">
+          <i class="material-icons">mic</i>
+        </button>
+        <p class="purple-text lighten-4">Click the icon to start ranting</p>
+    
+        <section id="sound-clips"></section>
+        <button class="btr waves-effect waves-light btn" id="pause"><i class="material-icons left">pause</i>pause</button>
+        <br>
+        <button class="btr waves-effect waves-light btn" id="stop"><i class="material-icons left">stop</i>stop</button>
+    
+      </div>
+    
+      <!-- Modal Structure -->
+      <div id="uploadmodal" class="modal">
+        <div class="modal-content">
+          <h3 class="center-align">Details</h3>
+          <div class="input-field col s12">
+            <input id="title" type="text" class="validate">
+            <label for="title">Title</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="desc" type="text" class="validate">
+            <label for="desc">description</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <span id="status"></span>
+          <button id="uploadbtn" class="waves-effect waves-green btn-flat">Upload</button>
+        </div>
+      </div>
+    
+    
+    </section>
 </body>
-<script src="https://use.fontawesome.com/7672e5925f.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/audio.js"></script>
 
 
 <script>
   M.AutoInit()
-  function enableEditMode(){
-    document.designMode = 'On';
-  }
+  modeCheck()
+
+
+
       function formatDoc(sCmd, sValue) {
          document.execCommand(sCmd, false, sValue); 
       }
-  function execCommandWithArg(command, arg){
-    document.execCommand(command, false, arg)
-  }
+
 document.querySelector('textarea').focus()
+document.querySelector('#mode').addEventListener('change', function() {
+    const modeCheck = document.querySelector('#mode').checked
+    if (modeCheck) {
+      document.querySelector('#text').style.display = 'none'
+      document.querySelector('#audio').style.display = 'block'
+    } else {
+      document.querySelector('#text').style.display = 'block'
+      document.querySelector('#audio').style.display = 'none'
+    }
+  } )
 
-// let el = document.querySelector('textarea');
-// el.addEventListener("input", function() {
-//   if (el.scrollTop != 0){
-//     el.style.height = el.scrollHeight + "px"}
-
-// });
-
+    function modeCheck() {
+      const modeCheck = document.querySelector('#mode').checked
+      if (modeCheck) {
+        document.querySelector('#text').style.display = 'none'
+        document.querySelector('#audio').style.display = 'block'
+      } else {
+        document.querySelector('#text').style.display = 'block'
+        document.querySelector('#audio').style.display = 'none'
+      }
+    }
 
 </script>
 
