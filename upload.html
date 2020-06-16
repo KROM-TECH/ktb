@@ -84,12 +84,14 @@
               class="material-icons">format_align_center</i></button>
           <button class="btn-small" onclick="formatDoc('justifyRight');"><i
               class="material-icons">format_align_right</i></button>
-          <button class="btn-small" onclick="formatDoc('createLink', Prompt('Enter a URL', 'https://'));"><i
+          <button class="btn-small" onclick="formatDoc('createLink', prompt('Enter a URL', 'https://'));"><i
               class="material-icons">link</i></button>
         </div>
         <div contenteditable="true" placeholder="Let here your Story..." id="textBox"></div>
       </div>
-      <div id="test2" class="col s12">Preview</div>
+      <div id="test2" class="col s12">Preview
+        <div contenteditable="false" placeholder="Let here your Story..." id="textView"></div>
+      </div>
     </div>
 
   </section>
@@ -145,7 +147,7 @@
         </div>
       </div>
       <div id="upload" class="col s12">
-        <div class="center" style="margin-top: 2rem; font-size: 3rem;">
+        <div class="center" style="margin-top: 2rem; font-size: 2rem;">
           Upload a pre-recorded audio
         </div>
       </div>
@@ -191,6 +193,10 @@
       document.querySelector('#audio').style.display = 'none'
     }
   }
+
+  document.querySelector('#textBox').addEventListener('keyup', function(){
+     document.querySelector('#textView').innerHTML = document.querySelector('#textBox').innerHTML  
+  })
 
 </script>
 
