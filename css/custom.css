@@ -113,7 +113,9 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-color: transparent !important;
   text-align: left !important;
 }
+
 #textView {
+  
   font-size: 1rem !important;
   color: white;
   margin-top: 2rem;
@@ -161,6 +163,11 @@ div[contenteditable=true] {
 }
 
 button:disabled {
-  background-color:rgb(158, 158, 172);
-  color:#fff
+  background-color: rgb(158, 158, 172);
+  color: #fff
+}
+
+.input{
+  border: 0.5px solid #512da8 !important;
+  width: 65%;
 }

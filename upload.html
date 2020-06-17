@@ -88,8 +88,10 @@
               class="material-icons">link</i></button>
         </div>
         <div contenteditable="true" placeholder="Let here your Story..." id="textBox"></div>
+        <label for="name">Name</label>
+        <input type="text" id='name' class="input" placeholder="leave blank to remain anonymous"> 
       </div>
-      <div id="test2" class="col s12">Preview
+      <div id="test2" class="col s12"> <br>
         <div contenteditable="false" placeholder="Let here your Story..." id="textView"></div>
       </div>
     </div>
@@ -147,8 +149,17 @@
         </div>
       </div>
       <div id="upload" class="col s12">
-        <div class="center" style="margin-top: 2rem; font-size: 2rem;">
+        <div class="center" style="margin-top: 2rem; font-size: 2rem; color: white;">
           Upload a pre-recorded audio
+        </div>
+        <div class="center" style="margin-top: 2rem; font-size: 2rem;">
+          <div class="custom-upload">
+            <label class="btn btn-block" for="book" id="custom-upload-button" data-element="custom-upload-button">Upload Audio
+            </label>
+            <div id="status"></div>
+            <input class="custom-upload__input" id="book" type="file" style="display: none;" data-behaviour="custom-upload-input"
+              value="" required="">
+          </div>
         </div>
       </div>
     </div>
@@ -159,6 +170,15 @@
 </body>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/audio.js"></script>
+  <script>
+      let upl = document.querySelector('.custom-upload__input')
+      upl.addEventListener('change', evt=>{
+        let input = evt.currentTarget.value.split('\\').pop()
+        console.log(input)
+        document.getElementById("custom-upload-button").innerHTML = input
+        
+      })
+  </script>
 
 
 <script>
@@ -185,6 +205,7 @@
 
   function modeCheck() {
     const modeCheck = document.querySelector('#mode').checked
+    document.querySelector('#textView').innerHTML = 'Nothing to Preview yet'
     if (modeCheck) {
       document.querySelector('#text').style.display = 'none'
       document.querySelector('#audio').style.display = 'block'
@@ -194,9 +215,17 @@
     }
   }
 
+
   document.querySelector('#textBox').addEventListener('keyup', function(){
      document.querySelector('#textView').innerHTML = document.querySelector('#textBox').innerHTML  
+
+           if (document.querySelector('#textView').innerText == '') {
+      document.querySelector('#textView').innerHTML = 'Nothing to Preview yet'
+    }   
+  
   })
+
+
 
 </script>
 
