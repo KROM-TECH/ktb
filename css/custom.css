@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+  overflow-x: hidden !important;
+  width: 100%;
+}
 .title {
   font-family: 'Sriracha', cursive;
   font-size: 5rem;
@@ -12,11 +17,11 @@
 }
 
 .cover {
-  background-image: url(/img/seconddp.jpg);
+  background-image: url(../img/seconddp.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   /* background-color: #512da8; */
   margin-top: -64px;
   height: 30rem;
@@ -185,4 +190,11 @@ input:disabled {
   background-color: rgb(158, 158, 172);
   border: 0.5px solid #38363b !important;
   width: 65%;
+}
+
+.flex{
+  display: flex  ;
+  justify-content: space-between;
+  overflow-x: auto;
+  
 }
