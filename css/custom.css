@@ -17,7 +17,7 @@
   background-position: center;
   text-align: center;
   color: #ffffff;
-  background-color: #512da8;
+  /* background-color: #512da8; */
   margin-top: -64px;
   height: 30rem;
 }
@@ -106,6 +106,16 @@ textarea.materialize-textarea:focus:not([readonly]) {
   color: white;
 }
 
+.publish {
+  background-color: rgb(123, 118, 185) !important;
+  color: white;
+}
+
+.publish:hover {
+  background-color: transparent !important;
+  color: rgb(123, 118, 185);
+}
+
 #textBox {
   font-size: 1rem !important;
   color: white;
@@ -115,7 +125,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 #textView {
-  
   font-size: 1rem !important;
   color: white;
   margin-top: 2rem;
@@ -167,7 +176,13 @@ button:disabled {
   color: #fff
 }
 
-.input{
+.input {
   border: 0.5px solid #512da8 !important;
+  width: 65%;
+}
+
+input:disabled {
+  background-color: rgb(158, 158, 172);
+  border: 0.5px solid #38363b !important;
   width: 65%;
 }

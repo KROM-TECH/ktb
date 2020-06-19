@@ -88,15 +88,17 @@
               class="material-icons">link</i></button>
         </div>
         <div contenteditable="true" placeholder="Let here your Story..." id="textBox"></div>
-        <label for="name">Name</label>
-        <input type="text" id='name' class="input" placeholder="leave blank to remain anonymous"> 
+        <label for="name" class="left">publisher</label>
+        <input type="text" id='name' class="input" placeholder=""> 
           <div class="switch left" >
             <label>
-              <input id="mode" type="checkbox">
+              <input id="anon" type="checkbox">
               <span class="lever"></span>
               Toggle to remain anonymous, None of your details will be associated with the post
             </label>
           </div>
+
+          <button class="btn publish">publish</button>
       </div>
       <div id="test2" class="col s12"> <br>
         <div contenteditable="false" placeholder="Let here your Story..." id="textView"></div>
@@ -207,6 +209,16 @@
     } else {
       document.querySelector('#text').style.display = 'block'
       document.querySelector('#audio').style.display = 'none'
+    }
+  })
+  // listen to the toggle event to activate anonymousity or not
+  document.querySelector('#anon').addEventListener('change', function () {
+    const modeCheck = document.querySelector('#anon').checked
+    if (modeCheck) {
+      document.querySelector('#name').disabled = true
+     
+    } else {
+      document.querySelector('#name').disabled = false
     }
   })
 
