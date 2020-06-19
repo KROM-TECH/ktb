@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-body{
+body {
   overflow-x: hidden !important;
   width: 100%;
 }
+
 .title {
   font-family: 'Sriracha', cursive;
   font-size: 5rem;
@@ -103,11 +103,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 .btn {
   background-color: transparent;
-  color: rgb(123, 118, 185);
+  color: #1B1464;
 }
 
 .btn:hover {
-  background-color: rgb(123, 118, 185);
+  background-color: #1B1464;
   color: white;
 }
 
@@ -192,9 +192,25 @@ input:disabled {
   width: 65%;
 }
 
-.flex{
-  display: flex  ;
-  justify-content: space-between;
+.flex {
+  display: flex;
+  justify-content: space-evenly;
   overflow-x: auto;
-  
+  flex-wrap: wrap;
+}
+
+.siz {
+  width: 23%;
+}
+
+@media only screen and (max-width: 900px) {
+  .siz {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .siz {
+    width: 100%;
+  }
 }
